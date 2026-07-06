@@ -9,6 +9,7 @@
     <h1>七夕変換機</h1>
     <input id="ny" placeholder="入力内容">
     <button onclick="calc_ca()">変換</button>
+    <button onclick="copyText()">コピー</button>
     <div id="ke"></div>
 <script>
     const ny = document.getElementById("ny");
@@ -23,6 +24,18 @@
         const syu = syutu.join("<br>");
         document.getElementById("ke").innerHTML = syu
     }
+
+    function copyText() {
+    const text = document.getElementById("ke").innerText;
+
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            alert("コピーしました");
+        })
+        .catch(err => {
+            console.error(err);
+        });
+}
 </script>
 </body>
 </html>
