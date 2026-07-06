@@ -1,1 +1,1 @@
-# tanabatahennkannki
+# 七夕変換機
