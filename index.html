@@ -1,1 +1,42 @@
 
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>七夕変換機</title>
+</head>
+<body>
+    <h1>七夕変換機</h1>
+    <input id="ny" placeholder="入力内容">
+    <button onclick="calc_ca()">変換</button>
+    <button onclick="copyText()">コピー</button>
+    <div id="ke"></div>
+<script>
+    const ny = document.getElementById("ny");
+    function calc_ca(){
+        var syutu = ['┏┷┓']
+        let ny_1=ny.value
+        let ny_2=ny.value.length
+        for (let i = 0; i < ny_2; i++){
+            syutu.push(`┃${ny_1[i]}┃`)
+        }
+        syutu.push('┗━☆彡')
+        const syu = syutu.join("<br>");
+        document.getElementById("ke").innerHTML = syu
+    }
+
+    function copyText() {
+    const text = document.getElementById("ke").innerText;
+
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            alert("コピーしました");
+        })
+        .catch(err => {
+            console.error(err);
+        });
+}
+</script>
+</body>
+</html>
